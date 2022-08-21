@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+    margin: 0%;
+}
+
+.main {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)20%, rgba(0, 0, 0, 0.5)20%), url(image/sunset.jfif);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(230, 21, 21, 0.92);
+    max-width: 400px;
+    margin: 1% 35%;
+    text-align: center;
+    font-family: arial;
+}
+
+.title {
+    color: rgb(239, 217, 17);
+    font-size: 18px;
+}
+
+option {
+    border: none;
+    outline: aqua;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(219, 23, 141);
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+select{
+    font-size: 20px;
+    color: red;
+    background-color: aqua;
+}
+
+
+p{
+    color: rgb(44, 231, 34);
+    font-size: 25px ;
+    margin-bottom: 15px;
+}
+
+option:hover, a:hover {
+    opacity: 0.7;
+}
+
+h2{
+    text-align: center;
+    font-size: 60px;
+    color: rgb(244, 10, 10);
+}
+
+h2:hover{
+    color: rgb(244, 178, 10);
+}
+
+img{
+    height: 200px;
+    border-radius: 10px;
+
+}
+
+.submit input{
+    border: none;
+    border-radius: 4px;
+    background-color: #31e115;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.submit input:hover{
+    background-color: #69f05a;
+}
+
+</style>
+</head>
+<body>
+<div class="main">
+<h2>Teacher Profile Page</h2>
+
+<div class="card">
+    <img src="image/profile1.jfif" alt="John" style="width:100%">
+    <h1 style="color: orangered;">SNIGDHA SEN</h1>
+    <p class="title">COLLEGE FACULTY MEMBER</p>
+    <p>GLOBAL ACADEMY OF TECHNOLOGY</p>
+    <label for="cars" style="color: orange; font-size: 25px;">CHOOSE DEPARTMENT:</label>
+    <select name="cars" id="cars">
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>ISE</option>
+        <option>EEE</option>
+        <option>MEC</option>
+        <option>CIV</option>
+    </select><br><br>
+    <label for="cars" style="color: orange; font-size: 25px;">CHOOSE THE SECTION:</label>
+    <select name="cars" id="cars">
+        <option>4A</option>
+        <option>4B</option>
+        <option>4C</option>
+    </select><br><br>
+    <div>
+        <div class="submit">
+            <a href="index.php"><input type="submit" value="GO" style="font-size: 25px; color: red;"></a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)20%, rgba(0, 0, 0, 0.5)20%), url(image/sunset.jfif);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.form{
+    height: 370px;
+    color: red;
+    background: linear-gradient(to top,);
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    right: 150px;
+    border-radius: 10px;
+    padding: 25px;
+    width: 300px;
+    float: left;
+    margin-left: 270px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 0px rgba(227, 8, 8, 0.954);
+}
+
+.form:hover {
+    background:none;
+    color: orange;
+}
+
+.form h2{
+    width: 250px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #ff7200;
+    font-size: 30px;
+    background-color: rgb(126, 225, 19);
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.form input{
+    width: 280px;
+    height: 45px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.form input{
+    outline: none;
+}
+
+::placeholder{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btnn{
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 30px;
+    font-size: 30px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+    font-weight: bold;
+}
+
+.liw h3{
+    padding-bottom: 10px;
+    text-align: right;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.content .cn{
+    text-decoration: none;
+    transition: 2s ease;
+}
+
+.cn:hover{
+    background-color: aqua;
+
+}
+
+a{
+    font-size: 25px;
+    text-decoration: none;
+}
+
+h3{
+    margin-bottom: 0px;
+}
