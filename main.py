@@ -1,3 +1,4 @@
+# importing required modules
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox as mess
@@ -10,19 +11,30 @@ import pandas as pd
 import datetime
 import time
 
+
+# Function to get the directory from the file path mentioned and assign it to "dir".
 def assure_path_exists(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
         os.makedirs(dir)
 
+        
+        
+#Timestamp 
 def tick():
     time_string = time.strftime('%H:%M:%S')
     clock.config(text=time_string)
     clock.after(200,tick)
 
+    
+    
+# Function to display the contact information
 def contact():
-    mess._show(title='Contact us', message="Please contact us on : 'xxxxxxxxxxxxx@gmail.com' ")
+    mess._show(title='Contact us', message="Please contact us on : 'kreitech@gmail.com' ")
 
+    
+    
+# Function checks for the "haarcascade_frontalface_default.xml" file if it exists continue the process else display file is missing
 def check_haarcascadefile():
     exists = os.path.isfile("haarcascade_frontalface_default.xml")
     if exists:
@@ -30,6 +42,14 @@ def check_haarcascadefile():
     else:
         mess._show(title='Some file missing', message='Please contact us for help')
         window.destroy()
+
+        
+# Find the directory from the given path using assure_path_exists().
+# Using isfile() with the same path returns (True/False) and assigns it to exists1.
+# If the path exists using open() with specified path and open it with read mode(default mode)
+# Using read() assigns all the text contained in the given file "TrainingImageLabel\psd.txt"
+#
+
 
 def save_pass():
     assure_path_exists("TrainingImageLabel/")
@@ -63,6 +83,8 @@ def save_pass():
     mess._show(title='Password Changed', message='Password changed successfully!!')
     master.destroy()
 
+    
+    
 
 def change_pass():
     global master
@@ -151,7 +173,7 @@ def TakeImages():
         csvFile1.close()
     Id = (txt.get())
     name = (txt2.get())
-    if ((name.isalpha()) or (' ' in name)):
+    if ((name.isalpha()) or (' ' in name)):  # isalpha is used to check if the string contains all alphabets or not  
         cam = cv2.VideoCapture(0)
         harcascadePath = "haarcascade_frontalface_default.xml"
         detector = cv2.CascadeClassifier(harcascadePath)
@@ -169,7 +191,7 @@ def TakeImages():
                             gray[y:y + h, x:x + w])
                 # display the frame
                 cv2.imshow('Taking Images', img)
-            # wait for 100 miliseconds
+            # wait for 100 miliseconds and if the key 'q' is pressed destroy the window
             if cv2.waitKey(100) & 0xFF == ord('q'):
                 break
             # break if the sample number is morethan 100
@@ -179,20 +201,24 @@ def TakeImages():
         cv2.destroyAllWindows()
         res = "Images Taken for ID : " + Id
         row = [serial, '', Id, '', name]
+        # Using 'a+' for reading and writing from the end of the file and opening the file as 'csvFile'
         with open('StudentDetails\StudentDetails.csv', 'a+') as csvFile:
+            # Inserting data to a csv file using the class csv.writer
             writer = csv.writer(csvFile)
-            writer.writerow(row)
-        csvFile.close()
+            writer.writerow(row) # adding a new line after each row
+        csvFile.close() #closing the csv file
         message1.configure(text=res)
     else:
         if (name.isalpha() == False):
-            res = "Enter Correct name"
+            res = "Enter Correct ."
             message.configure(text=res)
 
 
+            
+# Training the images
 def TrainImages():
-    check_haarcascadefile()
-    assure_path_exists("TrainingImageLabel/")
+    check_haarcascadefile() #checks if the file exists
+    assure_path_exists("TrainingImageLabel/") #assigns the path to the 'dir' 
     recognizer = cv2.face_LBPHFaceRecognizer.create()
     harcascadePath = "haarcascade_frontalface_default.xml"
     detector = cv2.CascadeClassifier(harcascadePath)
